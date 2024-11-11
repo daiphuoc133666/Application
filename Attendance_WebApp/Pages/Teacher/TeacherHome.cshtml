@@ -1,0 +1,25 @@
+﻿@page
+@model Attendance_WebApp.Pages.Teacher.TeacherHomeModel
+@{
+    <h2>Trang Chủ Giáo Viên</h2>
+
+    <h3>Danh sách lớp học của bạn</h3>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tên lớp</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cls in Model.Classes)
+            {
+                <tr>
+                    <td>@cls.ID</td>
+                    <td>@cls.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,27 @@
+﻿@page
+@model Attendance_WebApp.Pages.Account.LoginModel
+@{
+    <h2>Đăng Nhập</h2>
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Input.Username" class="form-label">Tên đăng nhập</label>
+            <input asp-for="Input.Username" class="form-control" />
+            <span asp-validation-for="Input.Username" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Input.Password" class="form-label">Mật khẩu</label>
+            <input asp-for="Input.Password" class="form-control" type="password" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+    </form>
+
+    <!-- Hiển thị thông báo không thành công -->
+    @if (Model.ErrorMessage != null)
+    {
+        <div class="alert alert-danger">
+            @Model.ErrorMessage
+        </div>
+    }
+}
